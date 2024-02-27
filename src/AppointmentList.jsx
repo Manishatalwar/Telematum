@@ -1,11 +1,6 @@
 import React from 'react';
 import "./App.css";
 const AppointmentsList = ({ appointments }) => {
-  const today = new Date().toISOString().split('T')[0];
-
-  const todayAppointments = appointments?.filter(
-    (appointment) => appointment.appointment_date === today
-  );
 
   return (
     <div className="container mx-auto mt-8">
@@ -40,7 +35,7 @@ const AppointmentsList = ({ appointments }) => {
 
           </thead>
           <tbody>
-            {todayAppointments.map((appointment, index) => (
+            {appointments?.map((appointment, index) => (
               <tr key={index}>
                 <td className="border px-6 py-4 flex items-center">
   <span role="img" aria-label="User" className="mr-2">
